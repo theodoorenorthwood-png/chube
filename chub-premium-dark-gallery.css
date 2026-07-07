@@ -1574,3 +1574,485 @@ mark {
     border: 1px solid CanvasText;
   }
 }
+
+/* -----------------------------------------------------------------------------
+   17. V2 Craftsmanship Polish Pass
+   ----------------------------------------------------------------------------- */
+.ant-layout-sider,
+aside,
+.sidebar,
+.navigation-sidebar,
+.left-sidebar,
+.side-nav,
+.sidenav,
+[data-testid*="sidebar"],
+[data-sidebar] {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.58),
+      transparent 8%,
+      transparent 92%,
+      rgba(244, 220, 165, 0.055)
+    ),
+    repeating-linear-gradient(
+      6deg,
+      rgba(244, 220, 165, 0.018) 0 1px,
+      transparent 1px 9px
+    ),
+    repeating-linear-gradient(
+      94deg,
+      rgba(0, 0, 0, 0.22) 0 2px,
+      transparent 2px 13px
+    ),
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(216, 184, 106, 0.075),
+      transparent 15rem
+    ),
+    linear-gradient(180deg, #191511, #0a0a0b 44%, #0e0b08 78%, #070606);
+  border-right: 0;
+  box-shadow:
+    28px 0 68px rgba(0, 0, 0, 0.58),
+    inset -1px 0 0 rgba(0, 0, 0, 0.88),
+    inset -2px 0 0 rgba(216, 184, 106, 0.22),
+    inset -3px 0 0 rgba(0, 0, 0, 0.62),
+    inset 1px 0 0 rgba(244, 220, 165, 0.045);
+}
+
+.ant-layout-sider::after,
+aside::after,
+.sidebar::after,
+.navigation-sidebar::after,
+.left-sidebar::after,
+.side-nav::after,
+.sidenav::after,
+[data-testid*="sidebar"]::after,
+[data-sidebar]::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 34%;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(0, 0, 0, 0.58) 62%,
+      rgba(0, 0, 0, 0.82)
+    ),
+    radial-gradient(
+      ellipse at 50% 100%,
+      rgba(140, 106, 43, 0.1),
+      transparent 68%
+    );
+}
+
+.sidebar-header,
+.side-nav-header,
+.navigation-sidebar-header,
+.ant-layout-sider .logo,
+.ant-layout-sider [class*="logo"],
+[data-testid*="sidebar"] [class*="logo"] {
+  min-height: 80px;
+  margin: 0.7rem 0.65rem 0.55rem;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(0, 0, 0, 0.74);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(244, 220, 165, 0.08), transparent 28%),
+    linear-gradient(180deg, rgba(31, 24, 17, 0.98), rgba(9, 9, 10, 0.98));
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(216, 184, 106, 0.18),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.54),
+    inset 0 1px 0 rgba(244, 220, 165, 0.12);
+}
+
+.sidebar-header::before,
+.side-nav-header::before,
+.navigation-sidebar-header::before,
+.ant-layout-sider .logo::before,
+.ant-layout-sider [class*="logo"]::before,
+[data-testid*="sidebar"] [class*="logo"]::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(216, 184, 106, 0.18);
+  border-radius: 13px;
+  pointer-events: none;
+}
+
+.sidebar-header::after,
+.side-nav-header::after,
+.navigation-sidebar-header::after,
+.ant-layout-sider .logo::after,
+.ant-layout-sider [class*="logo"]::after,
+[data-testid*="sidebar"] [class*="logo"]::after {
+  inset: auto 1rem 0.45rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(244, 220, 165, 0.5),
+    transparent
+  );
+}
+
+.ant-layout-sider .ant-menu,
+.sidebar .ant-menu,
+.navigation-sidebar .ant-menu,
+.side-nav .ant-menu,
+.sidenav .ant-menu {
+  padding: 0.45rem 0.7rem 9rem;
+}
+
+.ant-layout-sider .ant-menu::after,
+.sidebar .ant-menu::after,
+.navigation-sidebar .ant-menu::after,
+.side-nav .ant-menu::after,
+.sidenav .ant-menu::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 1rem 0.45rem;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(216, 184, 106, 0.28),
+    transparent
+  );
+  box-shadow: 0 18px 44px 38px rgba(0, 0, 0, 0.22);
+}
+
+.ant-layout-sider .ant-menu-item,
+.ant-layout-sider .ant-menu-submenu-title,
+.sidebar .ant-menu-item,
+.sidebar .ant-menu-submenu-title,
+.navigation-sidebar .ant-menu-item,
+.side-nav .ant-menu-item,
+.sidenav .ant-menu-item,
+.sidebar nav a,
+.navigation-sidebar nav a {
+  margin-block: 0.24rem;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.52);
+  background:
+    linear-gradient(90deg, rgba(244, 220, 165, 0.035), transparent 34%),
+    linear-gradient(180deg, rgba(24, 20, 16, 0.62), rgba(9, 9, 10, 0.34));
+  box-shadow:
+    inset 0 0 0 1px rgba(244, 220, 165, 0.035),
+    inset 0 1px 0 rgba(244, 220, 165, 0.055),
+    0 7px 14px rgba(0, 0, 0, 0.14);
+}
+
+.ant-layout-sider .ant-menu-item::after,
+.ant-layout-sider .ant-menu-submenu-title::after,
+.sidebar .ant-menu-item::after,
+.sidebar .ant-menu-submenu-title::after,
+.navigation-sidebar .ant-menu-item::after,
+.side-nav .ant-menu-item::after,
+.sidenav .ant-menu-item::after,
+.sidebar nav a::after,
+.navigation-sidebar nav a::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 11px;
+  border: 1px solid transparent;
+  pointer-events: none;
+  transition:
+    border-color var(--chub-speed),
+    opacity var(--chub-speed);
+  opacity: 0;
+}
+
+.ant-layout-sider .ant-menu-item:hover::after,
+.sidebar .ant-menu-item:hover::after,
+.navigation-sidebar .ant-menu-item:hover::after,
+.side-nav .ant-menu-item:hover::after,
+.sidenav .ant-menu-item:hover::after,
+.sidebar nav a:hover::after {
+  border-color: rgba(216, 184, 106, 0.16);
+  opacity: 1;
+}
+
+.ant-menu-item-selected,
+.ant-menu-item-active,
+.nav-item.active,
+nav a[aria-current="page"] {
+  box-shadow:
+    0 13px 28px rgba(0, 0, 0, 0.36),
+    0 0 0 1px rgba(0, 0, 0, 0.72),
+    0 0 0 2px rgba(216, 184, 106, 0.18),
+    inset 0 0 0 1px rgba(244, 220, 165, 0.1),
+    inset 3px 0 0 var(--chub-brass-400);
+}
+
+.anticon,
+nav svg {
+  display: inline-grid;
+  place-items: center;
+  padding: 0.12em;
+  border-radius: 0.48em;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.22),
+    rgba(244, 220, 165, 0.035)
+  );
+  box-shadow: inset 0 1px 0 rgba(244, 220, 165, 0.05);
+}
+
+.ant-layout-header,
+header,
+.topbar,
+.navbar,
+.top-nav,
+.app-header,
+.site-header,
+[data-testid*="topbar"],
+[data-testid*="header"],
+[data-header] {
+  background:
+    linear-gradient(180deg, rgba(244, 220, 165, 0.055), transparent 42%),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.34),
+      transparent 12%,
+      transparent 88%,
+      rgba(0, 0, 0, 0.28)
+    ),
+    linear-gradient(180deg, #1b1d21, #0c0d0f 68%, #11100d);
+  border-bottom: 0;
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.48),
+    0 1px 0 rgba(216, 184, 106, 0.22),
+    0 2px 0 rgba(0, 0, 0, 0.72),
+    inset 0 1px 0 rgba(244, 220, 165, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.82);
+}
+
+.ant-layout-header::before,
+header::before,
+.topbar::before,
+.navbar::before,
+.top-nav::before,
+.app-header::before,
+.site-header::before,
+[data-header]::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 3px;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 0, 0, 0.7) 12%,
+      rgba(0, 0, 0, 0.7) 88%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(244, 220, 165, 0.36),
+      rgba(140, 106, 43, 0.28),
+      transparent
+    );
+}
+
+.header-inner,
+.topbar-inner,
+.navbar-inner,
+.top-nav-inner,
+.app-header-inner,
+.site-header-inner,
+.ant-layout-header .container {
+  min-height: 68px;
+}
+
+.ant-layout-header .ant-avatar,
+header .ant-avatar,
+.topbar .ant-avatar,
+.navbar .ant-avatar,
+.top-nav .ant-avatar,
+.profile-button .ant-avatar,
+.user-menu-button .ant-avatar,
+.account-button .ant-avatar,
+.avatar-button .ant-avatar {
+  width: 34px;
+  height: 34px;
+  border: 4px solid #060607;
+  outline: 1px solid rgba(216, 184, 106, 0.64);
+  outline-offset: -2px;
+  border-radius: 12px;
+  box-shadow:
+    0 9px 18px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(0, 0, 0, 0.8),
+    0 0 0 2px rgba(216, 184, 106, 0.16),
+    inset 0 0 18px rgba(0, 0, 0, 0.52);
+  filter: sepia(0.16) contrast(1.08) saturate(0.8) brightness(0.94);
+}
+
+.ant-layout-header .ant-avatar:hover,
+header .ant-avatar:hover,
+.topbar .ant-avatar:hover,
+.navbar .ant-avatar:hover,
+.top-nav .ant-avatar:hover,
+.profile-button:hover .ant-avatar,
+.user-menu-button:hover .ant-avatar,
+.account-button:hover .ant-avatar,
+.avatar-button:hover .ant-avatar {
+  transform: translateY(-1px) scale(1.025);
+  outline-color: rgba(244, 220, 165, 0.78);
+  box-shadow:
+    0 12px 24px rgba(0, 0, 0, 0.48),
+    0 0 0 1px rgba(0, 0, 0, 0.86),
+    0 0 0 2px rgba(216, 184, 106, 0.22),
+    inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.profile-avatar,
+.profile-page .ant-avatar,
+.user-profile .ant-avatar,
+[data-testid*="profile"] .ant-avatar {
+  border-width: 8px;
+  border-radius: 24px;
+  outline: 2px solid rgba(216, 184, 106, 0.62);
+  outline-offset: -5px;
+  box-shadow:
+    0 34px 76px rgba(0, 0, 0, 0.66),
+    0 0 0 1px rgba(0, 0, 0, 0.88),
+    0 0 0 4px rgba(216, 184, 106, 0.14),
+    inset 0 0 46px rgba(0, 0, 0, 0.54);
+}
+
+.profile-avatar::after,
+.profile-page .ant-avatar::after,
+.user-profile .ant-avatar::after,
+[data-testid*="profile"] .ant-avatar::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(244, 220, 165, 0.2);
+  border-radius: 17px;
+  pointer-events: none;
+}
+
+.ant-card,
+.card,
+.panel,
+.character-card,
+.char-card,
+.character-tile,
+[data-testid*="card"],
+[data-card],
+.chat-window,
+.messages-container,
+.conversation-panel,
+.profile-card,
+.creator-card,
+.user-card {
+  box-shadow:
+    0 1px 0 rgba(244, 220, 165, 0.055) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.58) inset,
+    0 18px 38px rgba(0, 0, 0, 0.42),
+    0 34px 82px rgba(0, 0, 0, 0.26);
+}
+
+.ant-card,
+.card,
+.panel,
+.character-card,
+.char-card,
+.character-tile,
+[data-testid*="card"],
+[data-card] {
+  border-color: transparent;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.76),
+    0 0 0 2px rgba(216, 184, 106, 0.14),
+    0 0 0 3px rgba(244, 220, 165, 0.035),
+    0 20px 48px rgba(0, 0, 0, 0.44),
+    inset 0 1px 0 rgba(244, 220, 165, 0.08);
+}
+
+.ant-card:hover,
+.card:hover,
+.panel:hover,
+.character-card:hover,
+.char-card:hover,
+[data-card]:hover {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.82),
+    0 0 0 2px rgba(216, 184, 106, 0.22),
+    0 0 0 3px rgba(244, 220, 165, 0.055),
+    0 26px 62px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(244, 220, 165, 0.12);
+}
+
+.ant-card-head,
+.panel-header,
+.card-header {
+  position: relative;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.58);
+}
+
+.ant-card-head::after,
+.panel-header::after,
+.card-header::after {
+  content: "";
+  position: absolute;
+  inset: auto 1rem 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(216, 184, 106, 0.24),
+    transparent
+  );
+}
+
+.ant-modal-content,
+.ant-drawer-content,
+.dialog,
+.modal,
+[role="dialog"] {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.82),
+    0 0 0 2px rgba(216, 184, 106, 0.18),
+    0 42px 96px rgba(0, 0, 0, 0.62),
+    inset 0 1px 0 rgba(244, 220, 165, 0.1);
+}
+
+input,
+textarea,
+select,
+.ant-input,
+.ant-input-affix-wrapper,
+.ant-input-number,
+.ant-select-selector,
+.ant-picker,
+.search-input,
+.search-bar,
+.global-search {
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.58),
+    0 0 0 2px rgba(216, 184, 106, 0.08),
+    inset 0 2px 10px rgba(0, 0, 0, 0.44),
+    inset 0 1px 0 rgba(244, 220, 165, 0.06);
+}
+
+h1,
+.page-title {
+  letter-spacing: 0.032em;
+  font-weight: 800;
+}
+
+h2,
+h3,
+.ant-card-meta-title,
+.character-name {
+  letter-spacing: 0.03em;
+}
